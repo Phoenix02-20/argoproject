@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-argo-application
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/Phoenix02-20/argoproject.git
+    targetRevision: HEAD
+    path: argoproj
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: myapp
+
+  suncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
+      

@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t ${IMAGE_NAME} .'
+        sh 'docker build -t ${DOCKERHUB_REPO}/${IMAGE_NAME} .'
       }
     }
     stage('Login') {
@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push priya20xenonstack/${IMAGE_NAME}'
+        sh 'docker push ${DOCKERHUB_REPO}/${IMAGE_NAME}'
         }
         
       }

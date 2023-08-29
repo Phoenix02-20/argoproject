@@ -18,7 +18,7 @@ spec:
         app: argocheck
     spec:
       containers:
-      - image: priya20xenonstack/jenkins-nginx:16
+      - image: priya20xenonstack/argo-test
         name: jenkins-nginx
         resources: {}
 status: {}

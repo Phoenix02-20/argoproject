@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-    IMAGE_NAME = "argo-test"
+    IMAGE_NAME = "argo-test:5"
     DOCKERHUB_REPO = "priya20xenonstack"
   }
   stages {

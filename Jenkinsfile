@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push priya20xenonstack/argo-test'
+        sh 'docker push priya20xenonstack/${IMAGE_NAME}'
         }
         
       }

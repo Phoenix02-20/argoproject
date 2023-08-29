@@ -19,7 +19,6 @@ spec:
     spec:
       containers:
       - image: priya20xenonstack/argo-test:1
-        imagePullPolicy: Always
         name: argo-test
         resources: {}
 status: {}

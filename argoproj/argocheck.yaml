@@ -18,7 +18,7 @@ spec:
         app: argocheck
     spec:
       containers:
-      - image: priya20xenonstack/argo-test:1
+      - image: priya20xenonstack/argo-test:2
         name: argo-test
         resources: {}
 status: {}

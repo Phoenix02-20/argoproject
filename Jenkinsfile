@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t ${IMAGE_NAME} -f argoproj/Dockerfile'
+        sh 'docker build -t ${IMAGE_NAME} -f argoproj .'
       }
     }
     stage('Login') {

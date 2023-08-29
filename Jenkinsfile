@@ -2,13 +2,13 @@ pipeline {
   agent any
   environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-    IMAGE_NAME = "argo-test"
+    IMAGE_NAME = "drupal"
     DOCKERHUB_REPO = "priya20xenonstack"
   }
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t ${DOCKERHUB_REPO}/${IMAGE_NAME}:5 .'
+        sh 'docker build -t ${IMAGE_NAME} .'
       }
     }
     stage('Login') {

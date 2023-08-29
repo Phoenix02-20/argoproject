@@ -1,2 +1,1 @@
-FROM nginx:latest
-CMD ["nginx" "-g" "daemon off;"]
+FROM drupal:latest

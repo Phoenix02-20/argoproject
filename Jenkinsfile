@@ -19,7 +19,7 @@ pipeline {
     stage('Push') {
       steps {
         sh 'docker tag ${DOCKERHUB_REPO}/${IMAGE_NAME} ${DOCKERHUB_REPO}/${IMAGE_NAME}:0'
-        sh 'docker push ${DOCKERHUB_REPO}/${IMAGE_NAME}'
+        sh 'docker push ${DOCKERHUB_REPO}/${IMAGE_NAME}:0'
         }
         
       }

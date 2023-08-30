@@ -18,7 +18,7 @@ spec:
         app: argocheck
     spec:
       containers:
-      - image: priya20xenonstack/drupal-latest:8
+      - image: priya20xenonstack/drupal-latest:20
         name: argo-test
         resources: {}
 status: {}

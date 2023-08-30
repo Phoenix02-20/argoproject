@@ -37,11 +37,12 @@ pipeline {
           sh "docker tag ${IMAGE_NAME} ${dockerImage}"
           sh "docker push ${dockerImage}"
 
-          print "iamge: ${dockerImage}"
-          sh """#!/bin/bash
+          def file = sh "cat argoproj/argocheck.yaml"
+          print "file ${file}"
+          sh """
                 cat argoproj/argocheck.yaml | sed "s/image:.*/image: priya20xenonstack\\/docker-latest:${newTag}/g" > argocheck.yaml.new
-                mv argocheck.yaml.new argoproj/argocheck.yaml
           """
+          sh "mv argocheck.yaml.new argoproj/argocheck.yaml"
         }
         
       }

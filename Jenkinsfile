@@ -40,7 +40,9 @@ pipeline {
           sh """
                 cat argoproj/argocheck.yaml | sed "s/image:.*/image: priya20xenonstack\\/docker-latest:${newTag}/g" > argocheck.yaml.new
           """
-          sh "mv argocheck.yaml.new argoproj/argocheck.yaml"
+          def file = sh 'cat srgocheck.yaml.new"
+          print "file: ${file}"
+          sh 'mv argocheck.yaml.new argoproj/argocheck.yaml'
         }
         
       }

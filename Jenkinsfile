@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-    IMAGE_NAME = "drupal"
+    IMAGE_NAME = "drupal-latest"
     DOCKERHUB_REPO = "priya20xenonstack"
   }
   stages {

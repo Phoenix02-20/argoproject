@@ -20,9 +20,7 @@ pipeline {
       steps {
         script{
           def lastSuccessfulBuild = currentBuild.getPreviousSuccessfulBuild()?.number ?:1
-          //def newTag = (lastSuccessfulBuild + 1)
-          //currentBuild.displayName = "${newTag}"
-          //print "Tag ${lastSuccessfulBuild}"
+         
           print ""
 
           def oldTag = sh(script: "awk '/docker tag/' /var/jenkins_home/jobs/argo-test/branches/master/builds/${lastSuccessfulBuild}/log | cut -d ' ' -f 5 | head -n 2 | tail -n 1 | cut -d ':' -f 2", returnStdout: true)

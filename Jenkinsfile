@@ -38,7 +38,7 @@ pipeline {
           sh "docker push ${dockerImage}"
 
           print "iamge: ${dockerImage}"
-          sh """cat argoproj/argocheck.yaml | sed "s/image:.*/image: ${dockeerImage}/g" > argocheck.yaml.new"""
+          sh """cat argoproj/argocheck.yaml | sed "s/image:.*/image: ${dockerImage}/g" > argocheck.yaml.new"""
           sh 'mv argocheck.yaml.new argoproj/argocheck.yaml'
         }
         

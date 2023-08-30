@@ -42,7 +42,7 @@ pipeline {
           """
           def file = sh 'cat argocheck.yaml.new'
           print "file: ${file}"
-          sh 'mv argocheck.yaml.new argoproj/argocheck.yaml'
+          sh -c 'mv argocheck.yaml.new argoproj/argocheck.yaml && echo "Deployment file updated"'
         }
         
       }

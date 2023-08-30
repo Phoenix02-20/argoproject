@@ -36,17 +36,19 @@ pipeline {
           sh "docker build -t ${dockerImage} ."
           sh "docker tag ${IMAGE_NAME} ${dockerImage}"
           sh "docker push ${dockerImage}"
+
+          print "iamge: ${dockerImage}"
         }
         
       }
     }
-  stage('Edit deploy') {
-    steps {
-      print "iamge: ${dockerImage}"
-      sh 'cat argoproj/argocheck.yaml | sed "s/image:.*/image: ${dockerImage}/g" > argocheck.yaml.new'
-      sh 'mv argocheck.yaml.new argoproj/argocheck.yaml'
-     }
-    }
+  //stage('Edit deploy') {
+    //steps {
+      //print "iamge: ${dockerImage}"
+      //sh 'cat argoproj/argocheck.yaml | sed "s/image:.*/image: ${dockerImage}/g" > argocheck.yaml.new'
+      //sh 'mv argocheck.yaml.new argoproj/argocheck.yaml'
+     //}
+    //}
   }
   post {
     always {

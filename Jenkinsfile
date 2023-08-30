@@ -43,7 +43,7 @@ pipeline {
   stage('Edit deploy') {
     steps {
       sh 'cat argoproj/argocheck.yaml | sed "s/image:.*/image: ${dockerImage}/g" > argocheck.yaml.new'
-      sh 'mv argocheck.yaml.new argocheck.yaml'
+      sh 'mv argocheck.yaml.new argoproj/argocheck.yaml'
     }
   }
   }

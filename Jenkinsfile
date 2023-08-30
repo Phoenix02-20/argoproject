@@ -45,6 +45,7 @@ pipeline {
           sh """
               mv "argocheck.yaml.new" "argoproj/argocheck.yaml" && echo "Deployment file updated"
             """
+          sh 'mv deployment.yaml.new deployment.yaml'
       }
     }
   }

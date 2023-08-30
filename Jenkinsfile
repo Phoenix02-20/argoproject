@@ -42,7 +42,7 @@ pipeline {
           """
           
           sh """
-              ls -la argoproj
+              ls -la
               pwd
               mv "argocheck.yaml.new" "argoproj/argocheck.yaml" && echo "Deployment file updated"
             """
